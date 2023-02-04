@@ -1,5 +1,5 @@
 
-
+// function to get current location
 async function getCurrentLocation() {
   return new Promise((resolve, reject) => {
     if (navigator.geolocation) {
@@ -8,17 +8,17 @@ async function getCurrentLocation() {
           let latitude = position.coords.latitude;
           let longitude = position.coords.longitude;
           let currentLocation = {lat: latitude, lng: longitude};
-          console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
           resolve(currentLocation);
         },
         function(error) {
-          console.log("hi");
           reject(error);
         }
       );
     }
   });
 }
+
+// shows the map through current location if allowed if not it shows location of fixed lat and long
 async function showMap() {
   try {
     let currentLocation = await getCurrentLocation();
@@ -28,13 +28,21 @@ async function showMap() {
     };
 
     let map = new google.maps.Map(document.getElementById('gmp-map'), options);
-    let marker = new google.maps.Marker({position: currentLocation, map: map});
-
+    let circle = new google.maps.Circle({ // output a circle as a cuurent location
+      strokeColor: '#0000FF',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: '#0000FF',
+      fillOpacity: 1,
+      map: map,
+      center: currentLocation,
+      radius: 100
+    });
     navigator.geolocation.watchPosition(function(position) {
       let latitude = position.coords.latitude;
       let longitude = position.coords.longitude;
       currentLocation = {lat: latitude, lng: longitude};
-      marker.setPosition(currentLocation);
+      circle.setPosition(currentLocation);
       map.setCenter(currentLocation);
     });
   } catch (error) {
