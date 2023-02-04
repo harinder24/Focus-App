@@ -1,29 +1,60 @@
 
-let latitude = 49.1369247;
-let longitude = -122.8341621;
-let currentLocation;
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var latitude = position.coords.latitude;
-      var longitude = position.coords.longitude;
-      console.log("Latitude: " + latitude + ", Longitude: " + longitude);
-      currentLocation = {lat:latitude,lng:longitude}
-        let options = {
-          zoom: 8,
-          center: currentLocation
+
+async function getCurrentLocation() {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          let latitude = position.coords.latitude;
+          let longitude = position.coords.longitude;
+          let currentLocation = {lat: latitude, lng: longitude};
+          console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+          resolve(currentLocation);
+        },
+        function(error) {
+          console.log("hi");
+          reject(error);
         }
-        let map = new google.maps.Map(document.getElementById('gmp-map'),options)
-        let marker = new google.maps.Marker({position: currentLocation, map: map});
-        navigator.geolocation.watchPosition(function(position) {
-          latitude = position.coords.latitude;
-          longitude = position.coords.longitude;
-         
-          marker.setPosition({lat: latitude, lng: longitude});
-        
-          map.setCenter({lat: latitude, lng: longitude});
-        });
+      );
+    }
+  });
+}
+async function showMap() {
+  try {
+    let currentLocation = await getCurrentLocation();
+    let options = {
+      zoom: 12,
+      center: currentLocation
+    };
+
+    let map = new google.maps.Map(document.getElementById('gmp-map'), options);
+    let marker = new google.maps.Marker({position: currentLocation, map: map});
+
+    navigator.geolocation.watchPosition(function(position) {
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude;
+      currentLocation = {lat: latitude, lng: longitude};
+      marker.setPosition(currentLocation);
+      map.setCenter(currentLocation);
     });
-    
-  } 
+  } catch (error) {
+    let currentLocation = {lat:49.2610658,lng:-123.1218001};
+    let options = {
+      zoom: 12,
+      center: currentLocation
+    };
+
+    let map = new google.maps.Map(document.getElementById('gmp-map'), options);
+ 
+      map.setCenter(currentLocation);
+  }
+}
+showMap();
+
+
+
+
+
+
 
 
