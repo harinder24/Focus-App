@@ -196,10 +196,10 @@ function initMap() {
       }
       let imgStarString = ""
       for(let j = 0; j < star; j++){
-        imgStarString += '<img src = "https://blake5kh.files.wordpress.com/2012/09/star.jpg" width="10px">'
+        imgStarString += '<img src = "https://blake5kh.files.wordpress.com/2012/09/star.jpg" width="15px">'
       }
       for(let j = star; j < 5; j++){
-        imgStarString += '<img src = "https://www.freeiconspng.com/uploads/gold-star-empty-image-icon-23.png" width="10px">'
+        imgStarString += '<img src = "https://www.freeiconspng.com/uploads/gold-star-empty-image-icon-23.png" width="15px">'
       }
       let content = `<div class="buttonClick"><img src = ${arrayOfObj[i].img[0]} width="100px"> <h4>${arrayOfObj[i].name}</h4></div><div>Ratings: ${imgStarString}</div><div id="${arrayOfObj[i].idInfo}" onclick = "idk(this)" ><button>Book!</button></div>`;
      
@@ -212,19 +212,15 @@ function initMap() {
           position: individualLocation
         });
         infoWindow.open(map);
-        infoWindow.addListener("click", function() {
-          alert("hi");
-        });
+        
       });
-      
-      
-      
-     
-      
-      
+
       marker.addListener('click', function() {
- 
-        alert('Marker clicked: ' + this.title);
+        let infoWindow = new google.maps.InfoWindow({
+          content: content,
+          position: individualLocation
+        });
+        infoWindow.open(map);
       });
       
     }
