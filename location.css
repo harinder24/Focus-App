@@ -1,6 +1,6 @@
 * {box-sizing:border-box}
 body {
-    background: linear-gradient(#ffffff, #bcbcbc);
+    background: linear-gradient(#ffffff, #535353);
     background-attachment: fixed;
     text-align: center;
     font-family:'Didact Gothic';
@@ -11,6 +11,7 @@ body {
   height: 500px;
 }
 .center-div {
+  background: linear-gradient(#080707, #f8f4f4);
     width: 600px;
     height: auto;
     background-color: white;
@@ -19,6 +20,7 @@ body {
   }
   .center-div b{
     font-size: xx-large;
+    color: #f2f2f2;
   }
 @media only screen and (max-width: 768px) {
   #pic img{
@@ -143,6 +145,7 @@ li a:hover {
   color:  #111;
  
 }
+
 .message-box {
     width: 100%;
     height: 80%;
@@ -154,10 +157,11 @@ li a:hover {
  
 
   .message {
+    margin-left: 10%;
     text-align: left;
     display: flex;
     margin-bottom: 10px;
-    width: 100%;
+    width: 80%;
     background-color: white;
     padding: 10px;
     border-radius: 10px;
@@ -177,6 +181,16 @@ li a:hover {
   
   .star:hover ~ .star {
     color: #bbb;
+  }
+  #fstar{
+    color: #f2b01e;
+    width: 40px;
+    font-size: xx-large;
+  }
+  #estar{
+    color: #bbb;
+    width: 40px;
+    font-size: xx-large;
   }
   .review-box {
     width: 500px;
@@ -207,7 +221,39 @@ li a:hover {
     cursor: pointer;
   }
   
-  #btn:hover {
+  #btn1:hover {
     background-color: #e29913;
   }
+  #datepicker {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+  }
+  #appointmentTime {
+    font-family: Arial, sans-serif;
+    border: 1px solid gray;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 4px #ccc;
+    font-size: 16px;
+  }
+  #appointmentTime option:hover {
+    background-color: #ccc;
+    
+  }
+  #btn2 {
+    background-color: #f2f2f2;
+    color: rgb(36, 34, 34);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
   
+  #btn2:hover {
+    background-color: rgb(36, 34, 34);
+    color: #f2f2f2;
+  }
