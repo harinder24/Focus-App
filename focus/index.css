@@ -3,7 +3,7 @@ nav{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background: linear-gradient(#080707, #8d8b8b,#2b2a2a);
+    background:  #2b2e2e;
 }
 #book{
    text-align: right;
@@ -66,15 +66,20 @@ nav{
     top: 0;
     right: 0;
     padding: 0 1em;
+    color: white;
     background: #2b2e2e;
     cursor:pointer;
     pointer-events:none;
     transition:.25s all ease;
  }
  .select:hover::after {
-    color: white;
+    color: #5c6664;
  }
- @media only screen and (max-width: 480px) {
+ #book:hover{
+   background-color: #5c6664;
+   color: white;
+ }
+ @media only screen and (max-width: 768px) {
    .select{
       width: 12em;
    }
