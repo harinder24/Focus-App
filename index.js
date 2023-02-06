@@ -155,7 +155,7 @@ function initMap() {
     name: "Cypress Park",
     rating: [5, 5, 5, 5, 4, 3, 5, 5, 5, 5],
     background: "nature",
-    logo: "https://pbs.twimg.com/profile_images/766109959071404034/59gFtHir_400x400.jpg",
+    logo: "https://logodix.com/logo/403654.png",
     img: [
       "https://parksinsandiego.com/wp-content/uploads/2019/04/cypress-canyon-park-uncovered-picnic-area-1024x768.jpg",
     ],
@@ -178,7 +178,7 @@ function initMap() {
     name: "Kitsilano Beach",
     rating: [5, 5, 5, 5, 4, 3, 5, 2, 4, 3],
     background: "nature",
-    logo: "https://pbs.twimg.com/profile_images/766109959071404034/59gFtHir_400x400.jpg",
+    logo: "https://logodix.com/logo/403654.png",
     img: [
       "https://th.bing.com/th/id/OIP.YqitGwCgSCegQT8F4pOLTgHaCx?w=315&h=131&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     ],
