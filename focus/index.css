@@ -76,6 +76,6 @@ nav{
  }
  @media only screen and (max-width: 480px) {
    .select{
-      width: 14em;
+      width: 12em;
    }
  }
