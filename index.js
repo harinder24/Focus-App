@@ -110,7 +110,7 @@ function initMap() {
     logo: "https://www.shareicon.net/data/2015/09/21/644139_pin_512x512.png",
     img: [
       "https://upload.wikimedia.org/wikipedia/commons/a/a3/R%C3%B6e_g%C3%A5rd_caf%C3%A9_2.jpg",
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.blogto.com%2Feat_drink%2F2014%2F02%2Fthe_top_10_coffee_shops_that_serve_booze_in_toronto%2F&psig=AOvVaw3Jl9DNccXKCLBsBWZiUzNW&ust=1675570039207000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMCMmvr--vwCFQAAAAAdAAAAABAI",
+      "https://s3.amazonaws.com/images.ecwid.com/images/59136005/2215573344.jpg",
     ],
     review: [
       {
