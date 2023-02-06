@@ -239,7 +239,7 @@ let options;
         strokeOpacity: 0.8,
         strokeWeight: 2,
         fillColor: "#0000FF",
-        fillOpacity: 1,
+        fillOpacity: 0.2,
         map: map,
         center: currentLocation,
         radius: 100,
