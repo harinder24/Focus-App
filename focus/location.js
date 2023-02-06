@@ -107,12 +107,10 @@ function loadReview() {
   }
   let imgStarString = "";
   for (let j = 0; j < star; j++) {
-    imgStarString +=
-      `<span id="fstar">&#9733;</span>`;
+    imgStarString += `<span id="fstar">&#9733;</span>`;
   }
   for (let j = star; j < 5; j++) {
-    imgStarString +=
-      `<span id='estar'>&#9733;</span>`;
+    imgStarString += `<span id='estar'>&#9733;</span>`;
   }
   let rev = document.getElementById("rev");
   imgStarString = `<div><b><i>Rating</i></b> ${imgStarString}</div>`;
@@ -126,7 +124,8 @@ let numRating = 5;
 function writeReview() {
   // const ratingContainer = document.createElement("div");
   // ratingContainer.classList.add("rating");
-  let starsString = "<div class = 'rating'><h2><i style='color: white;'>How was your experience</i></h2>";
+  let starsString =
+    "<div class = 'rating'><h2><i style='color: white;'>How was your experience</i></h2>";
   for (let i = 0; i < 5; i++) {
     starsString += "<span class = 'star'>&#9733;</span>";
   }
@@ -157,7 +156,10 @@ function writeReview() {
           if (allLocationInfo[i].idInfo == target) {
             allLocationInfo[i].rating.push(numRating);
             locationInfo = allLocationInfo[i];
-            localStorage.setItem("locationData", JSON.stringify(allLocationInfo))
+            localStorage.setItem(
+              "locationData",
+              JSON.stringify(allLocationInfo)
+            );
             break;
           }
         }
@@ -167,7 +169,10 @@ function writeReview() {
             allLocationInfo[i].rating.push(numRating);
             allLocationInfo[i].review.push({ name: "tester", content: input });
             locationInfo = allLocationInfo[i];
-            localStorage.setItem("locationData", JSON.stringify(allLocationInfo))
+            localStorage.setItem(
+              "locationData",
+              JSON.stringify(allLocationInfo)
+            );
             break;
           }
         }
@@ -201,77 +206,115 @@ if (mm < 10) {
 let userDate = yyyy + "-" + mm + "-" + dd;
 today = yyyy + "-" + mm + "-" + dd;
 let locationAvailability = [
-  { hour: 9, data: '<option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>' },
-  { hour: 10, data: '<option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>' },
-  { hour: 11, data: '<option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>' },
-  { hour: 12, data: '<option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>' },
-  { hour: 13, data: '<option value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</option>' },
-  { hour: 14, data: '<option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>' },
-  { hour: 15, data: '<option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>' },
-  { hour: 16, data: '<option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>' },
-  { hour: 17, data: '<option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>' },
-  { hour: 18, data: ' <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>' },
+  {
+    hour: 9,
+    data: '<option value="9:00 AM - 10:00 AM">9:00 AM - 10:00 AM</option>',
+  },
+  {
+    hour: 10,
+    data: '<option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>',
+  },
+  {
+    hour: 11,
+    data: '<option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>',
+  },
+  {
+    hour: 12,
+    data: '<option value="12:00 PM - 1:00 PM">12:00 PM - 1:00 PM</option>',
+  },
+  {
+    hour: 13,
+    data: '<option value="1:00 PM - 2:00 PM">1:00 PM - 2:00 PM</option>',
+  },
+  {
+    hour: 14,
+    data: '<option value="2:00 PM - 3:00 PM">2:00 PM - 3:00 PM</option>',
+  },
+  {
+    hour: 15,
+    data: '<option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>',
+  },
+  {
+    hour: 16,
+    data: '<option value="4:00 PM - 5:00 PM">4:00 PM - 5:00 PM</option>',
+  },
+  {
+    hour: 17,
+    data: '<option value="5:00 PM - 6:00 PM">5:00 PM - 6:00 PM</option>',
+  },
+  {
+    hour: 18,
+    data: ' <option value="6:00 PM - 7:00 PM">6:00 PM - 7:00 PM</option>',
+  },
 ];
 
-      
 function booking() {
-  document.getElementById("booking").innerHTML = `<div><i><b>Pick a Date</i></b></div><input type="date" id="datepicker" min="${userDate}"><br><br><div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></div>`;
-  if(document.querySelector("#datepicker").value == "" ){
-    document.querySelector("#datepicker").value = today
+  document.getElementById(
+    "booking"
+  ).innerHTML = `<div><i><b>Pick a Date</i></b></div><input type="date" id="datepicker" min="${today}"><br><br><div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></div>`;
+  if (document.querySelector("#datepicker").value == "") {
+    document.querySelector("#datepicker").value = today;
   }
-  userDate = document.querySelector("#datepicker").value;
-  let hour = new Date().getHours()
-  if(userDate == today && hour >= 18){
-    let session = document.getElementById("session")
-    session.innerHTML = "<b>No available session for this date</b>"
-    session.style.color = "red"
-  }else{
-    for(let i = 0; i < locationAvailability.length;i++){
-      if(hour < locationAvailability[i].hour){
-        let appointmentTime = document.getElementById("appointmentTime")
-        appointmentTime.innerHTML += locationAvailability[i].data
+  
+  
+
+  let hour = new Date().getHours();
+  if (userDate == today &&  hour >= 18) {
+    let session = document.getElementById("session");
+    session.innerHTML = "<b>No available session for this date</b>";
+    session.style.color = "red";
+  } else {
+    if(userDate == today) {
+    for (let i = 0; i < locationAvailability.length; i++) {
+      if (hour < locationAvailability[i].hour) {
+        let appointmentTime = document.getElementById("appointmentTime");
+        appointmentTime.innerHTML += locationAvailability[i].data;
       }
     }
-    let session = document.getElementById("session")
-        session.innerHTML += `<div id="btn2Result"><br></div><div><button id='btn2'>Book!</button></div>`
-        document.getElementById("btn2").addEventListener('click',function () {
-          let bool = false;
-          let date = document.querySelector("#datepicker").value
-          let timing = document.querySelector("#appointmentTime").value
-          let location = locationInfo.name
-          let image = locationInfo.img[0]
-          let myObj = {date: date,time: timing,location:location,img:image}
-          if(localStorage.getItem("booking") == null){
-            localStorage.setItem("booking", JSON.stringify([myObj])) 
-            let output = document.getElementById("btn2Result")
-            output.innerHTML = "Successfully Booked!"
-            output.style.color = "green"
-          }
-          else{
-            let booking = JSON.parse(localStorage.getItem("booking"));
-            for (let i = 0; i < booking.length; i++) {
-              if(booking[i].date == myObj.date){
-                if(booking[i].time == myObj.time){
-                  bool = true
-                }
-              }
-              
-            }
-            if(bool){
-              let output = document.getElementById("btn2Result")
-              output.innerHTML = "You already have booked on exact time and date"
-              output.style.color = "red"
-            }else{
-              booking.push(myObj)
-              localStorage.setItem("booking", JSON.stringify(booking))
-              let output = document.getElementById("btn2Result")
-              output.innerHTML = "Successfully Booked!"
-              output.style.color = "green"
-            }
-          }
-        })
+  }else{
+    for (let i = 0; i < locationAvailability.length; i++) {
+      
+        let appointmentTime = document.getElementById("appointmentTime");
+        appointmentTime.innerHTML += locationAvailability[i].data;
+      }
   }
-
+    let session = document.getElementById("session");
+    session.innerHTML += `<div id="btn2Result"><br></div><div><button id='btn2'>Book!</button></div>`;
+    document.getElementById("btn2").addEventListener("click", function () {
+      let bool = false;
+      let date = document.querySelector("#datepicker").value;
+      let timing = document.querySelector("#appointmentTime").value;
+      let location = locationInfo.name;
+      let image = locationInfo.img[0];
+      let myObj = { date: date, time: timing, location: location, img: image };
+      if (localStorage.getItem("booking") == null) {
+        localStorage.setItem("booking", JSON.stringify([myObj]));
+        let output = document.getElementById("btn2Result");
+        output.innerHTML = "Successfully Booked!";
+        output.style.color = "green";
+      } else {
+        let booking = JSON.parse(localStorage.getItem("booking"));
+        for (let i = 0; i < booking.length; i++) {
+          if (booking[i].date == myObj.date) {
+            if (booking[i].time == myObj.time) {
+              bool = true;
+            }
+          }
+        }
+        if (bool) {
+          let output = document.getElementById("btn2Result");
+          output.innerHTML = "You already have booked on exact time and date";
+          output.style.color = "red";
+        } else {
+          booking.push(myObj);
+          localStorage.setItem("booking", JSON.stringify(booking));
+          let output = document.getElementById("btn2Result");
+          output.innerHTML = "Successfully Booked!";
+          output.style.color = "green";
+        }
+      }
+    });
+  }
 }
 
 document.getElementById("review").addEventListener("click", function () {
@@ -289,4 +332,10 @@ document.getElementById("book").addEventListener("click", function () {
   document.getElementById("rev").innerHTML = null;
   booking();
 });
-booking()
+booking();
+const dateField = document.getElementById("datepicker");
+  dateField.addEventListener("change", function () {
+
+    userDate = dateField.value
+    booking()
+  });
