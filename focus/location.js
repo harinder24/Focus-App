@@ -221,7 +221,7 @@ function booking() {
   }
   userDate = document.querySelector("#datepicker").value;
   let hour = new Date().getHours()
-  if(hour >= 18){
+  if(userDate == today && hour >= 18){
     let session = document.getElementById("session")
     session.innerHTML = "<b>No available session for this date</b>"
     session.style.color = "red"
