@@ -5,13 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Focus</title>
-
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <style>
-    
-  </style>
-  <div style="width: 100%; height: 400px;" class="map" id="gmp-map"></div>
+<nav>
+  <div class="select">
+    <select name="format" id="format">
+       <option selected disabled>Background Type</option>
+       <option class="options" id="silent">Silent</option>
+       <option class="options" id="nature">Nature</option>
+       <option class="options" id="pop">Pop</option>
+       <option class="options" id="lo-fi">Lo-fi</option>
+       <option class="options" id="all">All</option>
+    </select>
+ </div>
+ <div id="book">
+  <a href="./booking.html">Your Bookings</a>
+ </div>
+</nav>
+  
+  <div style="width: 100%; height: 91.3vh;" class="map" id="gmp-map"></div>
   
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZgtNEDPITU5ehCCGYXrftwhapgAUOev8&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cABC" async defer></script>
 
