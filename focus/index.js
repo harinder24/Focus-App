@@ -4,7 +4,7 @@ let locationData = [
   {
     name: "StarDollar",
     rating: [2, 5, 5, 3, 4, 1],
-    background: "Pop",
+    background: "pop",
     logo: "https://www.shareicon.net/data/2015/09/21/644139_pin_512x512.png",
     img: [
       "https://i.insider.com/61b0fdd50ee53700184555cf?width=700",
@@ -317,7 +317,7 @@ let options;
   const select = document.getElementById("format");
 select.addEventListener("change", function() {
   const selectedOption = select.options[select.selectedIndex];
-  console.log(selectedOption.id);
+
   map = new google.maps.Map(document.getElementById("gmp-map"), options);
 
     map.setCenter(currentLocation)
