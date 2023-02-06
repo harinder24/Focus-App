@@ -333,6 +333,7 @@ select.addEventListener("change", function() {
     }
     showLocation(myArr)
   }
+  
 });
 
 }
