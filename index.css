@@ -1,9 +1,39 @@
+
 #nav1{
-   box-sizing: border-box;
+
     display: flex;
     justify-content: space-between;
     width: 100%;
     background:  #2b2e2e;
+}
+#foot{
+  box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background:  #2b2e2e;
+}
+#footname{
+  flex: 1;
+    display: flex;
+  
+    justify-content: center;
+    
+    color: #bcbcbc;
+   
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#footdiv{
+
+    display: flex;
+ 
+    justify-content: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2b2e2e;
+  color: #bcbcbc;
 }
 #book{
    text-align: right;

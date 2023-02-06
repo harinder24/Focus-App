@@ -26,8 +26,10 @@ function initMap() {
   <a href="#" onclick='loadtpage()'>Bookings</a>
  </div>
 </nav>
+
   
-  <div style="width: 100%; height: 91.3vh;" class="map" id="gmp-map"></div>`
+  <div style="width: 100%; height: 86vh;" class="map" id="gmp-map"></div>
+  <nav id="foot"><div id="footdiv"><a href="#" id="footname">FOCUS</a></div></nav>`
   let locationData = [
   {
     name: "StarDollar",
