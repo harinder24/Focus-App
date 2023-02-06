@@ -1,3 +1,13 @@
+document.getElementById('root').innerHTML = `
+<div id="fpage">
+    
+</div>
+<div id="spage">
+  
+</div>
+<div id="tpage">
+
+</div>`
 
 function initMap() {
   let map, marker;
