@@ -227,6 +227,7 @@ let options;
     try {
       currentLocation = await getCurrentLocation();
       options = {
+        
         mapId: "4c8324ad947dde68",
         zoom: 10.5,
         center: currentLocation,
@@ -248,7 +249,16 @@ let options;
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
         currentLocation = { lat: latitude, lng: longitude };
-        circle.setMap(map);
+        circle = new google.maps.Circle({
+          strokeColor: "#0000FF",
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: "#0000FF",
+          fillOpacity: 0.2,
+          map: map,
+          center: currentLocation,
+          radius: 100,
+        });
         map.setCenter(currentLocation);
       });
     } catch (error) {
