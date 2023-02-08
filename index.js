@@ -10,7 +10,7 @@ document.getElementById('root').innerHTML = `
 </div>`
 
 function initMap() {
-  let map, marker;
+  let map, marker,infoWindow;
   document.getElementById('fpage').innerHTML = `<nav id="nav1">
   <div class="select1">
     <select name="format" id="format">
@@ -322,10 +322,11 @@ let options;
           position: individualLocation,
         });
         infoWindow.open(map);
+        
       });
 
       marker.addListener("click", function () {
-        let infoWindow = new google.maps.InfoWindow({
+        infoWindow = new google.maps.InfoWindow({
           content: content,
           position: individualLocation,
         });
@@ -358,6 +359,7 @@ select.addEventListener("change", function() {
   
 });
 }
+
 function idk(id) {
   localStorage.setItem("target", JSON.stringify(id.id));
   loadspage()
