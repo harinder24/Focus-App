@@ -245,22 +245,7 @@ let options;
         center: currentLocation,
         radius: 100,
       });
-      navigator.geolocation.watchPosition(function (position) {
-        let latitude = position.coords.latitude;
-        let longitude = position.coords.longitude;
-        currentLocation = { lat: latitude, lng: longitude };
-        circle = new google.maps.Circle({
-          strokeColor: "#0000FF",
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: "#0000FF",
-          fillOpacity: 0.2,
-          map: map,
-          center: currentLocation,
-          radius: 100,
-        });
-        map.setCenter(currentLocation);
-      });
+     
     } catch (error) {
       let currentLocation = { lat: 49.2610658, lng: -123.1218001 };
       let options = {
