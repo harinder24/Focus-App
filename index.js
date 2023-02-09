@@ -316,14 +316,14 @@ let options;
       
       marker.title = arrayOfObj[i].idInfo;
       marker.setPosition(individualLocation);
-      marker.addListener("mouseover", function () {
-        let infoWindow = new google.maps.InfoWindow({
-          content: content,
-          position: individualLocation,
-        });
-        infoWindow.open(map);
+      // marker.addListener("mouseover", function () {
+      //   let infoWindow = new google.maps.InfoWindow({
+      //     content: content,
+      //     position: individualLocation,
+      //   });
+      //   infoWindow.open(map);
         
-      });
+      // });
 
       marker.addListener("click", function () {
         infoWindow = new google.maps.InfoWindow({
