@@ -43,11 +43,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating: 3,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -67,11 +69,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -91,11 +95,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating:4,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -115,11 +121,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:3,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -139,11 +147,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:2,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -162,11 +172,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -185,11 +197,13 @@ function initMap() {
     review: [
       {
         name: "user1",
+        rating:4,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
       {
         name: "user2",
+        rating:5,
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
       },
@@ -529,11 +543,19 @@ function locationInit() {
     for (let j = star; j < 5; j++) {
       imgStarString += `<span id='estar'>&#9733;</span>`;
     }
+   
     let rev = document.getElementById("rev");
     imgStarString = `<div><b><i>Rating</i></b> ${imgStarString}</div>`;
     let reviewSection = "";
     for (let i = locationInfo.review.length - 1; i >= 0; i--) {
-      reviewSection += `<div class="message"><i>${locationInfo.review[i].name}~</i><br><p>${locationInfo.review[i].content}</p></div>`;
+      let imgStarStringuser = "";
+    for (let j = 0; j < locationInfo.review[i].rating; j++) {
+      imgStarStringuser += "<span id='ffstar'>&#9733;</span>";
+    }
+    for (let j = locationInfo.review[i].rating; j < 5; j++) {
+      imgStarStringuser += "<span id='eestar'>&#9733;</span>";
+    }
+      reviewSection += `<div class="message"><i>${locationInfo.review[i].name}~</i>${imgStarStringuser}<br><p>${locationInfo.review[i].content}</p></div>`;
     }
     rev.innerHTML = imgStarString + reviewSection;
   }
@@ -586,6 +608,7 @@ function locationInit() {
               allLocationInfo[i].rating.push(numRating);
               allLocationInfo[i].review.push({
                 name: "tester",
+                rating: numRating,
                 content: input,
               });
               locationInfo = allLocationInfo[i];
