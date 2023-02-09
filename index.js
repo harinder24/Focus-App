@@ -288,9 +288,9 @@ let options;
 
         icon: {
           url: arrayOfObj[i].logo,
-          scaledSize: new google.maps.Size(20, 20),
+          scaledSize: new google.maps.Size(30, 30),
           // anchor: new google.maps.Point(32, 80),
-          labelOrigin: new google.maps.Point(30, 30),
+          labelOrigin: new google.maps.Point(30, 35),
         },
       });
       let numOfRating = 0;
