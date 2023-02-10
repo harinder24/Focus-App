@@ -1,3 +1,4 @@
+
 #nav1 {
   display: flex;
   justify-content: space-between;
@@ -128,6 +129,7 @@
 /*  */
 
 #spage {
+  
   box-sizing: border-box;
   background: linear-gradient(#ffffff, #535353);
   background-attachment: fixed;
@@ -139,6 +141,7 @@
   height: 500px;
 }
 .center-div {
+
   background: linear-gradient(#080707, #f8f4f4);
   width: 600px;
   height: auto;
@@ -314,8 +317,10 @@
   box-shadow: 0 0 10px #ccc;
 }
 
-textarea {
-  width: 100%;
+.review-box textarea {
+  width: 90%;
+  left: 5%;
+  right: 5%;
   height: 200px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -377,6 +382,22 @@ textarea {
 
   .center-div {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .center-div {
+    min-height: 52.5vh;
+  }
+}
+
+@media only screen and (max-width: 912px) {
+  .center-div {
+    min-height: 52.5vh;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .center-div {
+    min-height: 55vh;
   }
 }
 

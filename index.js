@@ -8,7 +8,7 @@ document.getElementById('root').innerHTML = `
 <div id="tpage">
 
 </div>`
-
+document.getElementById("spage").hidden = true;
 function initMap() {
   let map, marker,infoWindow;
   document.getElementById('fpage').innerHTML = `<nav id="nav1">
@@ -382,7 +382,7 @@ function locationInit() {
   
   document.getElementById(
     "spage"
-  ).innerHTML = `<nav style="padding-bottom: 20px;">
+  ).innerHTML = `<div id="spagemain"><nav style="padding-bottom: 20px;">
   <ul class="ul1">
       <li class="li1">
       <a href="./index.html" id="stof"'> <b>&laquo; Back </b></a>
@@ -426,7 +426,7 @@ function locationInit() {
 <div class="center-div" id="wrev">
 
 
-</div>
+</div></div>
 `;
 
   let target = JSON.parse(localStorage.getItem("target"));
@@ -764,20 +764,32 @@ function locationInit() {
   }
 
   document.getElementById("review").addEventListener("click", function () {
+    document.getElementById("rev").hidden = false;
     document.getElementById("booking").innerHTML = null;
+    document.getElementById("booking").hidden = true;
     document.getElementById("wrev").innerHTML = null;
+    document.getElementById("wrev").hidden = true
     loadReview();
   });
   document.getElementById("add").addEventListener("click", function () {
+    document.getElementById("wrev").hidden = false
     document.getElementById("booking").innerHTML = null;
+    document.getElementById("booking").hidden = true;
     document.getElementById("rev").innerHTML = null;
+    document.getElementById("rev").hidden = true;
     writeReview();
   });
   document.getElementById("books").addEventListener("click", function () {
+    document.getElementById("booking").hidden = false;
     document.getElementById("wrev").innerHTML = null;
+    document.getElementById("wrev").hidden = true;
     document.getElementById("rev").innerHTML = null;
+    document.getElementById("rev").hidden = true;
     booking();
   });
+  document.getElementById("booking").hidden = false;
+  document.getElementById("rev").hidden = true;
+  document.getElementById("wrev").hidden = true;
   booking();
   const dateField = document.getElementById("datepicker");
   dateField.addEventListener("change", function () {
@@ -834,6 +846,7 @@ else{
 }
 }
 function loadspage() {
+  document.getElementById("spage").hidden = false;
   document.getElementById("fpage").innerHTML = null;
   document.getElementById("tpage").innerHTML = null;
   locationInit()
@@ -841,5 +854,6 @@ function loadspage() {
 function loadtpage() {
   document.getElementById("fpage").innerHTML = null;
   document.getElementById("spage").innerHTML = null;
+  document.getElementById("spage").hidden = true;
   bookinginit()
 }
