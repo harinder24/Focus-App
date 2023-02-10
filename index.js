@@ -564,7 +564,7 @@ function locationInit() {
     // const ratingContainer = document.createElement("div");
     // ratingContainer.classList.add("rating");
     let starsString =
-      "<div class = 'rating'><h2><i style='color: white;'>How was your experience</i></h2>";
+      "<div class = 'rating'><b><i style='color: white;'>How was your experience</i><b>";
     for (let i = 0; i < 5; i++) {
       starsString += "<span class = 'star'>&#9733;</span>";
     }
@@ -620,7 +620,7 @@ function locationInit() {
             }
           }
         }
-        input = "";
+        document.getElementById("userInput").value="";
         numRating = 5;
         let bravo = document.getElementById("bravo");
         bravo.innerHTML = "Bravo! Thanks for review";
