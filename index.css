@@ -148,6 +148,7 @@
   background-color: white;
   margin: auto;
   text-align: center;
+  min-height: 31.5vh;
 }
 .center-div b {
   font-size: xx-large;
