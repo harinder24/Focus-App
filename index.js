@@ -28,7 +28,7 @@ function initMap() {
 </nav>
 
   
-  <div style="width: 100%; height: 89vh;" class="map" id="gmp-map"></div>
+  <div style="width: 100%; height: 86vh;" class="map" id="gmp-map"></div>
   <nav id="foot"><div id="footdiv"><a href="#" id="footname">FOCUS</a></div></nav>`
   let locationData = [
   {
