@@ -564,7 +564,7 @@ function locationInit() {
     // const ratingContainer = document.createElement("div");
     // ratingContainer.classList.add("rating");
     let starsString =
-      "<div class = 'rating'><b><i style='color: white;'>How was your experience</i><b>";
+      "<div class = 'rating'><b><i style='color: white;'>How was your experience</i><b><br>";
     for (let i = 0; i < 5; i++) {
       starsString += "<span class = 'star'>&#9733;</span>";
     }
