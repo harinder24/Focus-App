@@ -3,16 +3,18 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background: #2b2e2e;
+  background-color: #111;
 }
 #foot {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   width: 100%;
-  background: #2b2e2e;
+  background-color: #111;
+  cursor: default;
 }
 #footname {
+  cursor: default;
   flex: 1;
   display: flex;
 
@@ -30,7 +32,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #2b2e2e;
+  background-color: #111;
   color: #bcbcbc;
 }
 #book {
@@ -41,7 +43,7 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #2b2e2e;
+  background-color: #111;
   color: #bcbcbc;
 }
 #book a {
@@ -64,7 +66,7 @@
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: #2b2e2e;
+  background-color: #111;
   background-image: none;
   flex: 1;
   padding: 0 0.5em;
@@ -82,10 +84,11 @@
   width: 20em;
   height: 3em;
   line-height: 3;
-  background: #5c6664;
+  background-color: #111;
   overflow: hidden;
   border-radius: 0.25em;
 }
+
 .select1::after {
   content: "\25BC";
   position: absolute;
@@ -93,7 +96,7 @@
   right: 0;
   padding: 0 1em;
   color: white;
-  background: #2b2e2e;
+  background-color: #111;
   cursor: pointer;
   pointer-events: none;
   transition: 0.25s all ease;
@@ -240,6 +243,7 @@
   background-color: #111;
   color: #bcbcbc;
   font-weight: bold;
+  padding: 0.8px 0px;
 }
 .li1 {
   height: inherit;
@@ -596,6 +600,7 @@
   color: #bcbcbc;
   text-align: center;
   text-decoration: none;
+  padding: 16px 0px;
 }
 
 #anb:hover {

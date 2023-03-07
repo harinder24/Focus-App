@@ -858,9 +858,9 @@ function bookinginit() {
   <nav style="padding-bottom: 20px;">
   <ul class="ul2">
       <li class="li2">
-          <br>
+        
           <button id="anb" onclick="fpageinit()"> <b>&laquo; Home</b></button>
-          <br><br>
+         
       </li>
       
   </ul>
