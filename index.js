@@ -716,7 +716,7 @@ menuButton.addEventListener("click", async function() {
   function booking() {
     document.getElementById(
       "booking"
-    ).innerHTML = `<div><i><b>Pick a Date</i></b></div><input type="date" id="datepicker" min="${today}"><br><br><div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></div>`;
+    ).innerHTML = `<div><i><b>Pick a Date</i></b></div><input type="date" id="datepicker" min="${today}"><br><br><div id="ssession"><div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></select></div></div>`;
   
 
       document.getElementById("datepicker").value = userDate;
@@ -728,12 +728,13 @@ menuButton.addEventListener("click", async function() {
       let hour = new Date().getHours();
       if (userDate == today && hour >= 18) {
         
-        let session = document.getElementById("session");
+        let session = document.getElementById("ssession");
         session.innerHTML = "<b>No available session for this date</b>";
-        session.style.color = "red";
+     
       } else {
         
         let appointmentTime = document.getElementById("appointmentTime");
+       
         appointmentTime.innerHTML = null; 
         if (userDate == today) {
       
@@ -755,9 +756,9 @@ menuButton.addEventListener("click", async function() {
 
       let hour = new Date().getHours();
       if (userDate == today && hour >= 18) {
-        let session = document.getElementById("session");
+        let session = document.getElementById("ssession");
         session.innerHTML = "<b>No available session for this date</b>";
-        session.style.color = "red";
+ 
       } else {
         if (userDate == today) {
           for (let i = 0; i < locationAvailability.length; i++) {
@@ -773,7 +774,7 @@ menuButton.addEventListener("click", async function() {
           }
         }
         let session = document.getElementById("session");
-        session.innerHTML += `<div id="btn2Result"><br></div><div><button id='btn2'>Book!</button></div>`;
+        session.innerHTML += `<br><br><div><button id='btn2'>Book!</button></div><br><span id="btn2Result"></span>`;
         document.getElementById("btn2").addEventListener("click", function () {
           let bool = false;
           let date = document.querySelector("#datepicker").value;
@@ -790,7 +791,7 @@ menuButton.addEventListener("click", async function() {
             localStorage.setItem("booking", JSON.stringify([myObj]));
             let output = document.getElementById("btn2Result");
             output.innerHTML = "Successfully Booked!";
-            output.style.color = "white";
+            output.style.color = "#176317";
           } else {
             let booking = JSON.parse(localStorage.getItem("booking"));
             for (let i = 0; i < booking.length; i++) {
@@ -810,7 +811,7 @@ menuButton.addEventListener("click", async function() {
               localStorage.setItem("booking", JSON.stringify(booking));
               let output = document.getElementById("btn2Result");
               output.innerHTML = "Successfully Booked!";
-              output.style.color = "white";
+              output.style.color = "#176317";
             }
           }
         });
