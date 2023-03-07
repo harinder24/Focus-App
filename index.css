@@ -150,6 +150,7 @@
   font-family: "Didact Gothic";
  min-height: 100vh;
  border: 4px solid black;
+ border-top: 0px;
 }
 #pic{
   display: inline-block;
@@ -563,6 +564,7 @@
   text-align: center;
   font-family: "Didact Gothic";
   border: 4px solid black;
+  border-top: 0px;
 }
 #outputbooking img {
   height: 100px;
