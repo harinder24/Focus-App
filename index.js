@@ -728,16 +728,17 @@ menuButton.addEventListener("click", async function() {
       
       let hour = new Date().getHours();
       if (userDate == today && hour >= 18) {
-        
+   
         let session = document.getElementById("ssession");
         session.innerHTML = "<b>No available session for this date</b>";
      
       } else {
-        
+        document.getElementById("ssession").innerHTML = `<div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></select></div>`
         let appointmentTime = document.getElementById("appointmentTime");
        
         appointmentTime.innerHTML = null; 
         if (userDate == today) {
+          
       
           for (let i = 0; i < locationAvailability.length; i++) {
             if (hour < locationAvailability[i].hour) {
@@ -751,8 +752,9 @@ menuButton.addEventListener("click", async function() {
             appointmentTime.innerHTML += locationAvailability[i].data;
           }
         }}
+       
     });
-    locationAvailabilityInit();
+    
     function locationAvailabilityInit() {
 
       let hour = new Date().getHours();
@@ -818,6 +820,7 @@ menuButton.addEventListener("click", async function() {
         });
       }
     }
+    locationAvailabilityInit();
   }
 
   document.getElementById("review").addEventListener("click", function () {
