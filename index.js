@@ -387,6 +387,7 @@ function locationInit() {
 <div id="lname">
 
 </div>
+<br>
 <div id="pic" style="text-align: center;">
 </div>
   <div id="vl"></div>
@@ -826,6 +827,9 @@ menuButton.addEventListener("click", async function() {
     document.getElementById("wrev").innerHTML = null;
     document.getElementById("wrev").hidden = true;
     loadReview();
+    document.getElementById('rev').scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   document.getElementById("add").addEventListener("click", function () {
     document.getElementById("wrev").hidden = false;
@@ -834,6 +838,9 @@ menuButton.addEventListener("click", async function() {
     document.getElementById("rev").innerHTML = null;
     document.getElementById("rev").hidden = true;
     writeReview();
+    document.getElementById('wrev').scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   document.getElementById("books").addEventListener("click", function () {
     document.getElementById("booking").hidden = false;
@@ -842,6 +849,9 @@ menuButton.addEventListener("click", async function() {
     document.getElementById("rev").innerHTML = null;
     document.getElementById("rev").hidden = true;
     booking();
+    document.getElementById('booking').scrollIntoView({
+      behavior: 'smooth'
+    });
   });
   document.getElementById("booking").hidden = false;
   document.getElementById("rev").hidden = true;

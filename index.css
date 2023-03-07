@@ -153,13 +153,13 @@
 #pic{
   display: inline-block;
 
-  height: calc(60vw / 1.6);
+  height: calc(55vw / 1.6);
   margin: 0;
   
 }
 #pic img {
-  width: 60vw;
-  height: calc(60vw / 1.6);
+  width: 55vw;
+  height: calc(55vw / 1.6);
 }
 
 
@@ -250,6 +250,7 @@
   color: #bcbcbc;
   font-weight: bold;
   padding: 0.8px 0px;
+  cursor: pointer;
 }
 .li1 {
   height: inherit;
