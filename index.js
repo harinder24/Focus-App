@@ -590,7 +590,7 @@ menuButton.addEventListener("click", async function() {
     for (let i = 0; i < 5; i++) {
       starsString += "<span class = 'star'>&#9733;</span>";
     }
-    starsString += `</div><div class="review-box"><textarea id="userInput" placeholder="Write your review here"></textarea><div id='bravo'><br></div><button id="btn1">Submit</button></div>`;
+    starsString += `</div><div class="review-box"><textarea id="userInput" placeholder="Write your review here"></textarea><div><br></div><button id="btn1">Submit</button><div id='bravo'><br></div></div>`;
 
     document.getElementById("wrev").innerHTML = starsString;
     const rating = document.querySelector(".rating");
@@ -646,12 +646,18 @@ menuButton.addEventListener("click", async function() {
         numRating = 5;
         let bravo = document.getElementById("bravo");
         bravo.innerHTML = "Bravo! Thanks for review";
-        bravo.style.color = "green";
+        bravo.style.color = "#176317";
         truth = false;
+        setTimeout(function(){
+          bravo.innerHTML =  `<br>`
+      },2000)
       } else {
         let bravo = document.getElementById("bravo");
         bravo.innerHTML = "Choose a rating!";
-        bravo.style.color = "red";
+        bravo.style.color = "darkred";
+        setTimeout(function(){
+          bravo.innerHTML =  `<br>`
+      },2000)
       }
     });
   }
@@ -777,7 +783,7 @@ menuButton.addEventListener("click", async function() {
           }
         }
         let session = document.getElementById("session");
-        session.innerHTML += `<br><br><div><button id='btn2'>Book!</button></div><br><span id="btn2Result"></span>`;
+        session.innerHTML += `<br><br><div><button id='btn2'>Book!</button></div><br><span id="btn2Result"><br></span>`;
         document.getElementById("btn2").addEventListener("click", function () {
           let bool = false;
           let date = document.querySelector("#datepicker").value;
@@ -795,6 +801,9 @@ menuButton.addEventListener("click", async function() {
             let output = document.getElementById("btn2Result");
             output.innerHTML = "Successfully Booked!";
             output.style.color = "#176317";
+            setTimeout(function(){
+              output.innerHTML =  `<br>`
+          },2000)
           } else {
             let booking = JSON.parse(localStorage.getItem("booking"));
             for (let i = 0; i < booking.length; i++) {
@@ -807,14 +816,20 @@ menuButton.addEventListener("click", async function() {
             if (bool) {
               let output = document.getElementById("btn2Result");
               output.innerHTML =
-                "You already have booked on exact time and date";
+                "You already have booking on exact time and date";
               output.style.color = "darkred";
+              setTimeout(function(){
+                output.innerHTML =  `<br>`
+            },2000)
             } else {
               booking.push(myObj);
               localStorage.setItem("booking", JSON.stringify(booking));
               let output = document.getElementById("btn2Result");
               output.innerHTML = "Successfully Booked!";
               output.style.color = "#176317";
+              setTimeout(function(){
+                output.innerHTML =  `<br>`
+            },2000)
             }
           }
         });
