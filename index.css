@@ -364,10 +364,12 @@
 
 .center-div {
 
-  background: linear-gradient(#080707, #f8f4f4);
+
   width: 600px;
   height: auto;
-  background-color: white;
+  background-color: rgb(102, 101, 101);
+  border: 4px solid #111;
+  border-radius: 16px;
   margin: auto;
   text-align: center;
   min-height: 31.5vh;
