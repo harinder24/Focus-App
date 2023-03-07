@@ -373,7 +373,13 @@
   transform: translate(-20px, 12px);
 }
 
-
+#navvv{
+  position:sticky;
+  top:0;
+  right: 0;
+left:0;
+  z-index: 200;
+}
 
 #menu-icon.active{
   background-color: transparent;
