@@ -1,4 +1,4 @@
-document.getElementById('root').innerHTML = `
+document.getElementById("root").innerHTML = `
 <div id="fpage">
     
 </div>
@@ -7,11 +7,11 @@ document.getElementById('root').innerHTML = `
 </div>
 <div id="tpage">
 
-</div>`
+</div>`;
 document.getElementById("spage").hidden = true;
 function initMap() {
-  let map, marker,infoWindow;
-  document.getElementById('fpage').innerHTML = `<nav id="nav1">
+  let map, marker, infoWindow;
+  document.getElementById("fpage").innerHTML = `<nav id="nav1">
   <div class="select1">
     <select name="format" id="format">
        <option selected disabled>Background Type</option>
@@ -28,195 +28,195 @@ function initMap() {
 </nav>
 
   
-  <div style="width: 100%; height: 86vh;" class="map" id="gmp-map"></div>
-  <nav id="foot"><div id="footdiv"><a href="#" id="footname">FOCUS</a></div></nav>`
+  <div style="width: 100%;   height: calc(100vh - 95px);" class="map" id="gmp-map"></div>
+  <nav id="foot"><div id="footdiv"><a href="#" id="footname">FOCUS</a></div></nav>`;
   let locationData = [
-  {
-    name: "StarDollar",
-    rating: [2, 5, 5, 3, 4, 1],
-    background: "pop",
-    logo: "https://www.shareicon.net/data/2015/09/21/644139_pin_512x512.png",
-    img: [
-      "https://i.insider.com/61b0fdd50ee53700184555cf?width=700",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1yf6H59J4yX8sdgkAmZCC_Tm7MTf01xoXPA&usqp=CAU",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating: 3,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.25743523738337, -123.1269753072887],
-    idInfo: 101,
-  },
-  {
-    name: "Downtown Library",
-    rating: [5, 5, 5, 5, 4, 3, 5],
-    background: "silent",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcSGDOS0hkk5shiEcujGF_I7umVEjZ54NPw&usqp=CAU",
-    img: [
-      "https://th.bing.com/th/id/R.ed6cc4eddec9ec1b4912237c93e4c865?rik=en5m3RdkWnh1aA&riu=http%3a%2f%2fwww.harvardmagazine.com%2fsites%2fdefault%2ffiles%2fimg%2farticle%2f0315%2fBodleian_1.jpg&ehk=3dIzHRkxlcCInQA67%2f%2foYm9diJHu7vmiQ%2bFWDVtRNkY%3d&risl=1&pid=ImgRaw&r=0",
-      "https://th.bing.com/th/id/OIP.0v2zfmmaVAqUbkUmuWzlfQHaHa?pid=ImgDet&w=207&h=207&c=7&dpr=1.3",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.280049, -123.127559],
-    idInfo: 102,
-  },
-  {
-    name: "Vancouver Library",
-    rating: [5, 3, 5, 5, 4, 3, 5],
-    background: "silent",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcSGDOS0hkk5shiEcujGF_I7umVEjZ54NPw&usqp=CAU",
-    img: [
-      "https://i.pinimg.com/originals/42/b6/f4/42b6f489e49f2569cc466ca871646a28.jpg",
-      "https://gabreport.com/wp-content/uploads/2014/05/2-WBPL_Interior_1-550x439.jpg",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating:4,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.25106, -123.062267],
-    idInfo: 103,
-  },
-  {
-    name: "Tea Caffe",
-    rating: [5, 3, 2, 1, 4, 3, 5, 3],
-    background: "lo-fi",
-    logo: "https://www.shareicon.net/data/2015/09/21/644139_pin_512x512.png",
-    img: [
-      "https://upload.wikimedia.org/wikipedia/commons/a/a3/R%C3%B6e_g%C3%A5rd_caf%C3%A9_2.jpg",
-      "https://s3.amazonaws.com/images.ecwid.com/images/59136005/2215573344.jpg",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:3,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.269631, -123.033597],
-    idInfo: 104,
-  },
-  {
-    name: "VCC Library",
-    rating: [5, 5, 5, 5, 4, 3, 5, 4, 2],
-    background: "silent",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcSGDOS0hkk5shiEcujGF_I7umVEjZ54NPw&usqp=CAU",
-    img: [
-      "https://www.overseaseducationlane.com/university_galary_images/galary_image_4_1611311258.jpeg",
-      "https://i.pinimg.com/736x/18/fa/1d/18fa1de78fec53c19e35ce2d19d40cab--toronto-branches.jpg",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:2,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.28159824977371, -123.11085230532682],
-    idInfo: 105,
-  },
-  {
-    name: "Cypress Park",
-    rating: [5, 5, 5, 5, 4, 3, 5, 5, 5, 5],
-    background: "nature",
-    logo: "https://logodix.com/logo/403654.png",
-    img: [
-      "https://parksinsandiego.com/wp-content/uploads/2019/04/cypress-canyon-park-uncovered-picnic-area-1024x768.jpg",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.358847481523966, -123.21076170726549],
-    idInfo: 106,
-  },
-  {
-    name: "Kitsilano Beach",
-    rating: [5, 5, 5, 5, 4, 3, 5, 2, 4, 3],
-    background: "nature",
-    logo: "https://logodix.com/logo/403654.png",
-    img: [
-      "https://th.bing.com/th/id/OIP.YqitGwCgSCegQT8F4pOLTgHaCx?w=315&h=131&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-    ],
-    review: [
-      {
-        name: "user1",
-        rating:4,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-      {
-        name: "user2",
-        rating:5,
-        content:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
-      },
-    ],
-    location: [49.277522282368565, -123.15346887212631],
-    idInfo: 107,
-  },
-];
-if(localStorage.getItem("locationData")){
-  locationData = JSON.parse(localStorage.getItem("locationData"))
-}else{
-  localStorage.setItem("locationData", JSON.stringify(locationData));
-}
+    {
+      name: "StarDollar",
+      rating: [2, 5, 5, 3, 4, 1],
+      background: "pop",
+      logo: "https://www.shareicon.net/data/2015/09/21/644139_pin_512x512.png",
+      img: [
+        "https://i.insider.com/61b0fdd50ee53700184555cf?width=700",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1yf6H59J4yX8sdgkAmZCC_Tm7MTf01xoXPA&usqp=CAU",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 3,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.25743523738337, -123.1269753072887],
+      idInfo: 101,
+    },
+    {
+      name: "Downtown Library",
+      rating: [5, 5, 5, 5, 4, 3, 5],
+      background: "silent",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcSGDOS0hkk5shiEcujGF_I7umVEjZ54NPw&usqp=CAU",
+      img: [
+        "https://th.bing.com/th/id/R.ed6cc4eddec9ec1b4912237c93e4c865?rik=en5m3RdkWnh1aA&riu=http%3a%2f%2fwww.harvardmagazine.com%2fsites%2fdefault%2ffiles%2fimg%2farticle%2f0315%2fBodleian_1.jpg&ehk=3dIzHRkxlcCInQA67%2f%2foYm9diJHu7vmiQ%2bFWDVtRNkY%3d&risl=1&pid=ImgRaw&r=0",
+        "https://th.bing.com/th/id/OIP.0v2zfmmaVAqUbkUmuWzlfQHaHa?pid=ImgDet&w=207&h=207&c=7&dpr=1.3",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.280049, -123.127559],
+      idInfo: 102,
+    },
+    {
+      name: "Vancouver Library",
+      rating: [5, 3, 5, 5, 4, 3, 5],
+      background: "silent",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcSGDOS0hkk5shiEcujGF_I7umVEjZ54NPw&usqp=CAU",
+      img: [
+        "https://i.pinimg.com/originals/42/b6/f4/42b6f489e49f2569cc466ca871646a28.jpg",
+        "https://gabreport.com/wp-content/uploads/2014/05/2-WBPL_Interior_1-550x439.jpg",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 4,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.25106, -123.062267],
+      idInfo: 103,
+    },
+    {
+      name: "Tea Caffe",
+      rating: [5, 3, 2, 1, 4, 3, 5, 3],
+      background: "lo-fi",
+      logo: "https://www.shareicon.net/data/2015/09/21/644139_pin_512x512.png",
+      img: [
+        "https://upload.wikimedia.org/wikipedia/commons/a/a3/R%C3%B6e_g%C3%A5rd_caf%C3%A9_2.jpg",
+        "https://s3.amazonaws.com/images.ecwid.com/images/59136005/2215573344.jpg",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 3,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.269631, -123.033597],
+      idInfo: 104,
+    },
+    {
+      name: "VCC Library",
+      rating: [5, 5, 5, 5, 4, 3, 5, 4, 2],
+      background: "silent",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcSGDOS0hkk5shiEcujGF_I7umVEjZ54NPw&usqp=CAU",
+      img: [
+        "https://www.overseaseducationlane.com/university_galary_images/galary_image_4_1611311258.jpeg",
+        "https://i.pinimg.com/736x/18/fa/1d/18fa1de78fec53c19e35ce2d19d40cab--toronto-branches.jpg",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 2,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.28159824977371, -123.11085230532682],
+      idInfo: 105,
+    },
+    {
+      name: "Cypress Park",
+      rating: [5, 5, 5, 5, 4, 3, 5, 5, 5, 5],
+      background: "nature",
+      logo: "https://logodix.com/logo/403654.png",
+      img: [
+        "https://parksinsandiego.com/wp-content/uploads/2019/04/cypress-canyon-park-uncovered-picnic-area-1024x768.jpg",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.358847481523966, -123.21076170726549],
+      idInfo: 106,
+    },
+    {
+      name: "Kitsilano Beach",
+      rating: [5, 5, 5, 5, 4, 3, 5, 2, 4, 3],
+      background: "nature",
+      logo: "https://logodix.com/logo/403654.png",
+      img: [
+        "https://th.bing.com/th/id/OIP.YqitGwCgSCegQT8F4pOLTgHaCx?w=315&h=131&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      ],
+      review: [
+        {
+          name: "user1",
+          rating: 4,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+        {
+          name: "user2",
+          rating: 5,
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+        },
+      ],
+      location: [49.277522282368565, -123.15346887212631],
+      idInfo: 107,
+    },
+  ];
+  if (localStorage.getItem("locationData")) {
+    locationData = JSON.parse(localStorage.getItem("locationData"));
+  } else {
+    localStorage.setItem("locationData", JSON.stringify(locationData));
+  }
   async function getCurrentLocation() {
     return new Promise((resolve, reject) => {
       if (navigator.geolocation) {
@@ -234,14 +234,13 @@ if(localStorage.getItem("locationData")){
       }
     });
   }
-let currentLocation;
-let options;
+  let currentLocation;
+  let options;
   // shows the map through current location if allowed if not it shows location of fixed lat and long
   async function showMap() {
     try {
       currentLocation = await getCurrentLocation();
       options = {
-        
         mapId: "4c8324ad947dde68",
         zoom: 10.5,
         center: currentLocation,
@@ -259,7 +258,6 @@ let options;
         center: currentLocation,
         radius: 100,
       });
-     
     } catch (error) {
       let currentLocation = { lat: 49.2610658, lng: -123.1218001 };
       let options = {
@@ -319,15 +317,13 @@ let options;
       }
       let imgStarString = "";
       for (let j = 0; j < star; j++) {
-        imgStarString +=
-          `<span id="ffstar">&#9733;</span>`;
+        imgStarString += `<span id="ffstar">&#9733;</span>`;
       }
       for (let j = star; j < 5; j++) {
-        imgStarString +=
-          `<span id="eestar">&#9733;</span>`;
+        imgStarString += `<span id="eestar">&#9733;</span>`;
       }
       let content = `<div class="buttonClick" style="text-align:center;"><img src = ${arrayOfObj[i].img[0]} width="100px"><div> <b>${arrayOfObj[i].name}</b></div><div><b>Ratings: </b>${imgStarString}</div><div id="${arrayOfObj[i].idInfo}" onclick = "idk(this)" ><button class="btn0">Book!</button></div></div>`;
-      
+
       marker.title = arrayOfObj[i].idInfo;
       marker.setPosition(individualLocation);
       // marker.addListener("mouseover", function () {
@@ -336,7 +332,7 @@ let options;
       //     position: individualLocation,
       //   });
       //   infoWindow.open(map);
-        
+
       // });
 
       marker.addListener("click", function () {
@@ -347,39 +343,35 @@ let options;
         infoWindow.open(map);
       });
     }
-
   }
 
   showMap();
   const select = document.getElementById("format");
-select.addEventListener("change", function() {
-  const selectedOption = select.options[select.selectedIndex];
+  select.addEventListener("change", function () {
+    const selectedOption = select.options[select.selectedIndex];
 
-  map = new google.maps.Map(document.getElementById("gmp-map"), options);
+    map = new google.maps.Map(document.getElementById("gmp-map"), options);
 
-    map.setCenter(currentLocation)
-  if(selectedOption.id == "all"){
-    
-    showLocation(locationData)
-  }else{
-    let myArr = []
-    for(let i = 0; i < locationData.length; i++){
-      if(locationData[i].background == selectedOption.id){
-        myArr.push(locationData[i])
+    map.setCenter(currentLocation);
+    if (selectedOption.id == "all") {
+      showLocation(locationData);
+    } else {
+      let myArr = [];
+      for (let i = 0; i < locationData.length; i++) {
+        if (locationData[i].background == selectedOption.id) {
+          myArr.push(locationData[i]);
+        }
       }
+      showLocation(myArr);
     }
-    showLocation(myArr)
-  }
-  
-});
+  });
 }
 
 function idk(id) {
   localStorage.setItem("target", JSON.stringify(id.id));
-  loadspage()
+  loadspage();
 }
 function locationInit() {
-  
   document.getElementById(
     "spage"
   ).innerHTML = `<div id="spagemain"><nav style="padding-bottom: 20px;">
@@ -397,13 +389,12 @@ function locationInit() {
 </div>
 <div id="pic" style="text-align: center;">
 </div>
-<div style="text-align:center; " >
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
-
-<div >
+  <div id="vl"></div>
+  <div id = "mmenu">
+  <div id="menu">
+    <button id="menu-button"><div id="menu-icon"></div></button>
+  </div>
+  <div id="mnav">
 <ul class="ul1">
   <li style="width: 33.333%;" class="li1">
     <a id="review">Reviews</a> 
@@ -416,6 +407,9 @@ function locationInit() {
   </li>
 </ul>
 </div>
+</div>
+   
+</div>
 <br>
 <div class="center-div" id="rev">      
 </div>
@@ -426,8 +420,37 @@ function locationInit() {
 <div class="center-div" id="wrev">
 
 
+</div><div>
+<br>
+<br>
 </div></div>
 `;
+ let menuButton = document.getElementById("menu-button");
+
+  let mnav = document.getElementById("mnav");
+let menubool = true;
+menuButton.addEventListener("click", async function() {
+  if(menubool){
+    mnav.classList.remove("hide");
+    mnav.classList.add("open");
+    document.getElementById('menu-icon').classList.toggle("active")
+    menubool = false
+  }
+  else{
+    mnav.classList.add("hide")
+    setTimeout(function(){
+      mnav.classList.remove("open");
+  }, 600);
+    
+    document.getElementById('menu-icon').classList.remove("active")
+    
+    menubool = true;
+  }
+  
+});
+
+
+
 
   let target = JSON.parse(localStorage.getItem("target"));
   let allLocationInfo = JSON.parse(localStorage.getItem("locationData"));
@@ -495,7 +518,7 @@ function locationInit() {
   function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+    
     if (n > slides.length) {
       slideIndex = 1;
     }
@@ -505,11 +528,9 @@ function locationInit() {
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
+   
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+   
   }
   document.getElementById(
     "lname"
@@ -543,18 +564,18 @@ function locationInit() {
     for (let j = star; j < 5; j++) {
       imgStarString += `<span id='estar'>&#9733;</span>`;
     }
-   
+
     let rev = document.getElementById("rev");
-    imgStarString = `<div><b><i>Rating</i></b> ${imgStarString}</div>`;
+    imgStarString = `<div style="padding-bottom:10px;"><b><i>Rating</i></b> ${imgStarString}</div>`;
     let reviewSection = "";
     for (let i = locationInfo.review.length - 1; i >= 0; i--) {
       let imgStarStringuser = "";
-    for (let j = 0; j < locationInfo.review[i].rating; j++) {
-      imgStarStringuser += "<span id='ffstar'>&#9733;</span>";
-    }
-    for (let j = locationInfo.review[i].rating; j < 5; j++) {
-      imgStarStringuser += "<span id='eestar'>&#9733;</span>";
-    }
+      for (let j = 0; j < locationInfo.review[i].rating; j++) {
+        imgStarStringuser += "<span id='ffstar'>&#9733;</span>";
+      }
+      for (let j = locationInfo.review[i].rating; j < 5; j++) {
+        imgStarStringuser += "<span id='eestar'>&#9733;</span>";
+      }
       reviewSection += `<div class="message"><i>${locationInfo.review[i].name}~</i>${imgStarStringuser}<br><p>${locationInfo.review[i].content}</p></div>`;
     }
     rev.innerHTML = imgStarString + reviewSection;
@@ -620,7 +641,7 @@ function locationInit() {
             }
           }
         }
-        document.getElementById("userInput").value="";
+        document.getElementById("userInput").value = "";
         numRating = 5;
         let bravo = document.getElementById("bravo");
         bravo.innerHTML = "Bravo! Thanks for review";
@@ -648,6 +669,7 @@ function locationInit() {
 
   let userDate = yyyy + "-" + mm + "-" + dd;
   today = yyyy + "-" + mm + "-" + dd;
+
   let locationAvailability = [
     {
       hour: 9,
@@ -695,72 +717,105 @@ function locationInit() {
     document.getElementById(
       "booking"
     ).innerHTML = `<div><i><b>Pick a Date</i></b></div><input type="date" id="datepicker" min="${today}"><br><br><div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></div>`;
-    if (document.querySelector("#datepicker").value == "") {
-      document.querySelector("#datepicker").value = today;
-    }
+  
 
-    let hour = new Date().getHours();
-    if (userDate == today && hour >= 18) {
-      let session = document.getElementById("session");
-      session.innerHTML = "<b>No available session for this date</b>";
-      session.style.color = "red";
-    } else {
-      if (userDate == today) {
-        for (let i = 0; i < locationAvailability.length; i++) {
-          if (hour < locationAvailability[i].hour) {
+      document.getElementById("datepicker").value = userDate;
+    
+    const dateInput = document.getElementById("datepicker");
+    dateInput.addEventListener("change", (event) => {
+      userDate = event.target.value
+      
+      let hour = new Date().getHours();
+      if (userDate == today && hour >= 18) {
+        
+        let session = document.getElementById("session");
+        session.innerHTML = "<b>No available session for this date</b>";
+        session.style.color = "red";
+      } else {
+        
+        let appointmentTime = document.getElementById("appointmentTime");
+        appointmentTime.innerHTML = null; 
+        if (userDate == today) {
+      
+          for (let i = 0; i < locationAvailability.length; i++) {
+            if (hour < locationAvailability[i].hour) {
+                         
+              appointmentTime.innerHTML += locationAvailability[i].data;
+            }
+          }
+        } else {
+          for (let i = 0; i < locationAvailability.length; i++) {
+           
+            appointmentTime.innerHTML += locationAvailability[i].data;
+          }
+        }}
+    });
+    locationAvailabilityInit();
+    function locationAvailabilityInit() {
+
+      let hour = new Date().getHours();
+      if (userDate == today && hour >= 18) {
+        let session = document.getElementById("session");
+        session.innerHTML = "<b>No available session for this date</b>";
+        session.style.color = "red";
+      } else {
+        if (userDate == today) {
+          for (let i = 0; i < locationAvailability.length; i++) {
+            if (hour < locationAvailability[i].hour) {
+              let appointmentTime = document.getElementById("appointmentTime");
+              appointmentTime.innerHTML += locationAvailability[i].data;
+            }
+          }
+        } else {
+          for (let i = 0; i < locationAvailability.length; i++) {
             let appointmentTime = document.getElementById("appointmentTime");
             appointmentTime.innerHTML += locationAvailability[i].data;
           }
         }
-      } else {
-        for (let i = 0; i < locationAvailability.length; i++) {
-          let appointmentTime = document.getElementById("appointmentTime");
-          appointmentTime.innerHTML += locationAvailability[i].data;
-        }
-      }
-      let session = document.getElementById("session");
-      session.innerHTML += `<div id="btn2Result"><br></div><div><button id='btn2'>Book!</button></div>`;
-      document.getElementById("btn2").addEventListener("click", function () {
-        let bool = false;
-        let date = document.querySelector("#datepicker").value;
-        let timing = document.querySelector("#appointmentTime").value;
-        let location = locationInfo.name;
-        let image = locationInfo.img[0];
-        let myObj = {
-          date: date,
-          time: timing,
-          location: location,
-          img: image,
-        };
-        if (localStorage.getItem("booking") == null) {
-          localStorage.setItem("booking", JSON.stringify([myObj]));
-          let output = document.getElementById("btn2Result");
-          output.innerHTML = "Successfully Booked!";
-          output.style.color = "green";
-        } else {
-          let booking = JSON.parse(localStorage.getItem("booking"));
-          for (let i = 0; i < booking.length; i++) {
-            if (booking[i].date == myObj.date) {
-              if (booking[i].time == myObj.time) {
-                bool = true;
-              }
-            }
-          }
-          if (bool) {
-            let output = document.getElementById("btn2Result");
-            output.innerHTML = "You already have booked on exact time and date";
-            output.style.color = "red";
-          } else {
-            booking.push(myObj);
-            localStorage.setItem("booking", JSON.stringify(booking));
+        let session = document.getElementById("session");
+        session.innerHTML += `<div id="btn2Result"><br></div><div><button id='btn2'>Book!</button></div>`;
+        document.getElementById("btn2").addEventListener("click", function () {
+          let bool = false;
+          let date = document.querySelector("#datepicker").value;
+          let timing = document.querySelector("#appointmentTime").value;
+          let location = locationInfo.name;
+          let image = locationInfo.img[0];
+          let myObj = {
+            date: date,
+            time: timing,
+            location: location,
+            img: image,
+          };
+          if (localStorage.getItem("booking") == null) {
+            localStorage.setItem("booking", JSON.stringify([myObj]));
             let output = document.getElementById("btn2Result");
             output.innerHTML = "Successfully Booked!";
             output.style.color = "green";
+          } else {
+            let booking = JSON.parse(localStorage.getItem("booking"));
+            for (let i = 0; i < booking.length; i++) {
+              if (booking[i].date == myObj.date) {
+                if (booking[i].time == myObj.time) {
+                  bool = true;
+                }
+              }
+            }
+            if (bool) {
+              let output = document.getElementById("btn2Result");
+              output.innerHTML =
+                "You already have booked on exact time and date";
+              output.style.color = "red";
+            } else {
+              booking.push(myObj);
+              localStorage.setItem("booking", JSON.stringify(booking));
+              let output = document.getElementById("btn2Result");
+              output.innerHTML = "Successfully Booked!";
+              output.style.color = "green";
+            }
           }
-        }
-      });
+        });
+      }
     }
-
   }
 
   document.getElementById("review").addEventListener("click", function () {
@@ -768,11 +823,11 @@ function locationInit() {
     document.getElementById("booking").innerHTML = null;
     document.getElementById("booking").hidden = true;
     document.getElementById("wrev").innerHTML = null;
-    document.getElementById("wrev").hidden = true
+    document.getElementById("wrev").hidden = true;
     loadReview();
   });
   document.getElementById("add").addEventListener("click", function () {
-    document.getElementById("wrev").hidden = false
+    document.getElementById("wrev").hidden = false;
     document.getElementById("booking").innerHTML = null;
     document.getElementById("booking").hidden = true;
     document.getElementById("rev").innerHTML = null;
@@ -797,8 +852,8 @@ function locationInit() {
     booking();
   });
 }
-function bookinginit(){
-  document.getElementById('tpage').innerHTML=`
+function bookinginit() {
+  document.getElementById("tpage").innerHTML = `
   <div id="bookingheight">
   <nav style="padding-bottom: 20px;">
   <ul class="ul2">
@@ -812,48 +867,45 @@ function bookinginit(){
 </nav>
 <div id="outputbooking">
 </div>
-</div>`
-  if(localStorage.getItem("booking")){
-  let bookingArray = JSON.parse(localStorage.getItem("booking"));
-  let outputString = ""
-  let num = 0
-  for(let i = bookingArray.length-1; i >= 0; i-- ){
-      outputString += `<div><div class="content2"><div class="left"><h4><i>Location: ${bookingArray[num].location}</i></h4><h4><i>Date: ${bookingArray[i].date}</i></h4><h4><i>Time: ${bookingArray[i].time}</i></h4></div><div class="right"><img src="${bookingArray[i].img}"><br><br><button id=${i} class='cancel'>Cancel</button></div></div></div>`
+</div>`;
+  if (localStorage.getItem("booking")) {
+    let bookingArray = JSON.parse(localStorage.getItem("booking"));
+    let outputString = "";
+    let num = 0;
+    for (let i = bookingArray.length - 1; i >= 0; i--) {
+      outputString += `<div><div class="content2"><div class="left"><h4><i>Location: ${bookingArray[num].location}</i></h4><h4><i>Date: ${bookingArray[i].date}</i></h4><h4><i>Time: ${bookingArray[i].time}</i></h4></div><div class="right"><img src="${bookingArray[i].img}"><br><br><button id=${i} class='cancel'>Cancel</button></div></div></div>`;
       num++;
-  }
-  document.getElementById("outputbooking").innerHTML = outputString
-  let bubble = document.getElementById("outputbooking")
+    }
+    document.getElementById("outputbooking").innerHTML = outputString;
+    let bubble = document.getElementById("outputbooking");
 
-  bubble.addEventListener("click", (event) => {
-      const isButton = event.target.nodeName === "BUTTON"
-      if(isButton){
-          
-          let data = event.target.id;
-          if(bookingArray.length == 1 && data == 0){
-              localStorage.removeItem("booking")
-              bookinginit()
-          }else{
-              bookingArray.splice(data,1)
-          localStorage.setItem("booking", JSON.stringify(bookingArray))
-          bookinginit()
-          }
-          
+    bubble.addEventListener("click", (event) => {
+      const isButton = event.target.nodeName === "BUTTON";
+      if (isButton) {
+        let data = event.target.id;
+        if (bookingArray.length == 1 && data == 0) {
+          localStorage.removeItem("booking");
+          bookinginit();
+        } else {
+          bookingArray.splice(data, 1);
+          localStorage.setItem("booking", JSON.stringify(bookingArray));
+          bookinginit();
+        }
       }
-      })
+    });
+  } else {
+    document.getElementById("outputbooking").innerHTML = "No Bookings";
   }
-else{
-  document.getElementById("outputbooking").innerHTML = "No Bookings"
-}
 }
 function loadspage() {
   document.getElementById("spage").hidden = false;
   document.getElementById("fpage").innerHTML = null;
   document.getElementById("tpage").innerHTML = null;
-  locationInit()
+  locationInit();
 }
 function loadtpage() {
   document.getElementById("fpage").innerHTML = null;
   document.getElementById("spage").innerHTML = null;
   document.getElementById("spage").hidden = true;
-  bookinginit()
+  bookinginit();
 }
