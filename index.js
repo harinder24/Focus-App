@@ -762,7 +762,7 @@ menuButton.addEventListener("click", async function() {
             appointmentTime.innerHTML += locationAvailability[i].data;
           }
         }}
-       
+        locationAvailabilityInit()
     });
     
     function locationAvailabilityInit() {
@@ -896,7 +896,7 @@ menuButton.addEventListener("click", async function() {
 function bookinginit() {
   document.getElementById("tpage").innerHTML = `
   <div id="bookingheight">
-  <nav style="padding-bottom: 20px;">
+  <nav id="navvvv" style="padding-bottom: 20px;">
   <ul class="ul2">
       <li class="li2">
         
