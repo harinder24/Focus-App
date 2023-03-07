@@ -333,13 +333,13 @@
 }
 
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 700px){
   #menu{
     display: flex;
     justify-content: flex-end;
   }
 } 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 700px){
   /* #menu{
     display: flex;
     justify-content: flex-end;
@@ -483,6 +483,7 @@
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  
 }
 
 #btn1:hover {

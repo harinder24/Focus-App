@@ -790,7 +790,7 @@ menuButton.addEventListener("click", async function() {
             localStorage.setItem("booking", JSON.stringify([myObj]));
             let output = document.getElementById("btn2Result");
             output.innerHTML = "Successfully Booked!";
-            output.style.color = "green";
+            output.style.color = "white";
           } else {
             let booking = JSON.parse(localStorage.getItem("booking"));
             for (let i = 0; i < booking.length; i++) {
@@ -804,13 +804,13 @@ menuButton.addEventListener("click", async function() {
               let output = document.getElementById("btn2Result");
               output.innerHTML =
                 "You already have booked on exact time and date";
-              output.style.color = "red";
+              output.style.color = "darkred";
             } else {
               booking.push(myObj);
               localStorage.setItem("booking", JSON.stringify(booking));
               let output = document.getElementById("btn2Result");
               output.innerHTML = "Successfully Booked!";
-              output.style.color = "green";
+              output.style.color = "white";
             }
           }
         });
