@@ -322,7 +322,7 @@ function initMap() {
       for (let j = star; j < 5; j++) {
         imgStarString += `<span id="eestar">&#9733;</span>`;
       }
-      let content = `<div class="buttonClick" style="text-align:center;"><img src = ${arrayOfObj[i].img[0]} width="100px"><div> <b>${arrayOfObj[i].name}</b></div><div><b>Ratings: </b>${imgStarString}</div><div id="${arrayOfObj[i].idInfo}" onclick = "idk(this)" ><button class="btn0">Book!</button></div></div>`;
+      let content = `<div class="buttonClick" style="text-align:center;"><img src = ${arrayOfObj[i].img[0]} width="100px"><div> <b>${arrayOfObj[i].name}</b></div><div><b>Ratings: </b>${imgStarString}</div><div id="${arrayOfObj[i].idInfo}" onclick = "idk(this)" ><button style="margin-top:5px;" class="btn0">Book!</button></div></div>`;
 
       marker.title = arrayOfObj[i].idInfo;
       marker.setPosition(individualLocation);
