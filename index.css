@@ -45,6 +45,7 @@
   color: #bcbcbc;
 }
 #book a {
+  cursor: pointer;
   flex: 1;
   display: flex;
   float: right;
@@ -101,7 +102,8 @@
   
   color: #5c6664;
 }
-#book:hover {
+#book span:hover {
+ 
   transform: scale(1.2);
   transition: all 0.3s;;
 }
@@ -579,22 +581,26 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+
   overflow: hidden;
   background-color: #111;
   color: #bcbcbc;
 }
 
-.li2 a {
-  justify-content: center;
 
+
+#anb{
+  justify-content: center;
+  background-color: transparent;
+  border: none;
   color: #bcbcbc;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
 
-.li2:hover {
+#anb:hover {
   transform: scale(1.2);
+  cursor: pointer;
   transition: all 0.3s;
 }
 .cancel {

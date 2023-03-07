@@ -23,7 +23,7 @@ function initMap() {
     </select>
  </div>
  <div id="book">
-  <a href="#" onclick='loadtpage()'>Bookings</a>
+  <a onclick='loadtpage()'><span>Bookings</span></a>
  </div>
 </nav>
 
@@ -859,7 +859,7 @@ function bookinginit() {
   <ul class="ul2">
       <li class="li2">
           <br>
-          <a href="./index.html"> <b>&laquo; Home</b></a>
+          <button id="anb" onclick="fpageinit()"> <b>&laquo; Home</b></button>
           <br><br>
       </li>
       
@@ -908,4 +908,10 @@ function loadtpage() {
   document.getElementById("spage").innerHTML = null;
   document.getElementById("spage").hidden = true;
   bookinginit();
+}
+function fpageinit() {
+  document.getElementById("spage").innerHTML = null;
+  document.getElementById("tpage").innerHTML = null;
+  document.getElementById("tpage").hidden = null;
+  initMap();
 }
