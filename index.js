@@ -440,7 +440,7 @@ menuButton.addEventListener("click", async function() {
     mnav.classList.add("hide")
     setTimeout(function(){
       mnav.classList.remove("open");
-  }, 600);
+  }, 500);
     
     document.getElementById('menu-icon').classList.remove("active")
     

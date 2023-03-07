@@ -245,8 +245,8 @@
 }
 
 #menu{
-  display: flex;
-  justify-content: flex-end;
+  display: none;
+
  
 }
 
@@ -328,6 +328,16 @@
 
 
 @media only screen and (max-width: 400px){
+  #menu{
+    display: flex;
+    justify-content: flex-end;
+  }
+} 
+@media only screen and (max-width: 400px){
+  /* #menu{
+    display: flex;
+    justify-content: flex-end;
+  } */
   #mnav{
     display: none;
     transform-origin: top center;
