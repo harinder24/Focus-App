@@ -14,7 +14,7 @@ function initMap() {
   document.getElementById("fpage").innerHTML = `<nav id="nav1">
   <div class="select1">
     <select name="format" id="format">
-       <option selected disabled>Background Type</option>
+       <option selected disabled>Background Music</option>
        <option class="options" id="silent">Silent</option>
        <option class="options" id="nature">Nature</option>
        <option class="options" id="pop">Pop</option>
