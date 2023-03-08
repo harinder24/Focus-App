@@ -374,7 +374,7 @@ function idk(id) {
 function locationInit() {
   document.getElementById(
     "spage"
-  ).innerHTML = `<div id="spagemain"><nav id="navvv" style="padding-bottom: 20px;">
+  ).innerHTML = `<div id="spagemain"><nav id="navvv" style="margin-bottom: 20px; height: 45px;">
   <ul class="ul1">
       <li class="li1">
       <a href="./index.html" id="stof"'> <b>&laquo; Back </b></a>
