@@ -617,8 +617,8 @@ left:0;
 }
 @media only screen and (max-width: 768px) {
   #pic img {
-    width: 80vw;
-    height: calc(80vw / 1.6);
+    width: calc(100vw - 8px);
+    height: calc(100vw / 1.6);
   }
 
   .center-div {
