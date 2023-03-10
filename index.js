@@ -10,7 +10,8 @@ document.getElementById("root").innerHTML = `
 </div>`;
 document.getElementById("spage").hidden = true;
 function initMap() {
-  let map, marker, infoWindow;
+  let map, marker, infoWindow ;
+  let tryth = false;
   document.getElementById("fpage").innerHTML = `<nav id="nav1">
   <div class="select1">
     <select name="format" id="format">
@@ -322,7 +323,7 @@ function initMap() {
       for (let j = star; j < 5; j++) {
         imgStarString += `<span id="eestar">&#9733;</span>`;
       }
-      let content = `<div class="buttonClick" style="text-align:center;"><img src = ${arrayOfObj[i].img[0]} width="100px"><div> <b>${arrayOfObj[i].name}</b></div><div><b>Ratings: </b>${imgStarString}</div><div id="${arrayOfObj[i].idInfo}" onclick = "idk(this)" ><button style="margin-top:5px;" class="btn0">Book!</button></div></div>`;
+      let content = `<div class="buttonClick" style="text-align:center;"><img src = ${arrayOfObj[i].img[0]} width="100px"><div> <b>${arrayOfObj[i].name}</b></div><div><b>Ratings: </b>${imgStarString}</div><div id="${arrayOfObj[i].idInfo}" onclick = "idk(this)" ><button style="margin-top:5px;" class="btn0">More Info!</button></div></div>`;
 
       marker.title = arrayOfObj[i].idInfo;
       marker.setPosition(individualLocation);
@@ -336,10 +337,15 @@ function initMap() {
       // });
 
       marker.addListener("click", function () {
+        if(tryth){
+          infoWindow.close()
+          tryth = false
+        }
         infoWindow = new google.maps.InfoWindow({
           content: content,
           position: individualLocation,
         });
+        tryth = true;
         infoWindow.open(map);
       });
     }
@@ -374,44 +380,47 @@ function idk(id) {
 function locationInit() {
   document.getElementById(
     "spage"
-  ).innerHTML = `<div id="spagemain"><nav id="navvv" style="margin-bottom: 20px; height: 45px;">
+  ).innerHTML = `<div id="spagemain"><span id="menu">
+  <button id="menu-button"><div id="menu-icon"></div></button>
+</span><nav id="navvv" style= height: 45px;">
+<div id="mnav">
   <ul class="ul1">
       <li class="li1">
-      <a href="./index.html" id="stof"'> <b>&laquo; Back </b></a>
+      <span id="lispan" onclick="location.href= './index.html'"><span id="hhover">Home</span></span>
       </li>
       <li style="float:right" class="li1">
           <a href="#" id="stoh" onclick='loadtpage()'>Bookings</a>
       </li>
+          <li style="float:right" class="li1">
+        <a id="review">Reviews</a> 
+      </li>
+      <li style="float:right" class="li1">
+        <a id="books">Book Session</a> 
+      </li>
+      <li style="float:right" class="li1">
+        <a id="add">Add Review</a> 
+      </li>
+
+    
+
+     
   </ul>
+  </div>
 </nav>
+
+<div style="height: 20px;">
+</div>
 <div id="lname">
 
 </div>
 <br>
+
 <div id="pic" style="text-align: center;">
 </div>
-  <div id="vl"></div>
-  <div id = "mmenu">
-  <div id="menu">
-    <button id="menu-button"><div id="menu-icon"></div></button>
-  </div>
-  <div id="mnav">
-<ul class="ul1">
-  <li style="width: 33.333%;" class="li1">
-    <a id="review">Reviews</a> 
-  </li>
-  <li style="width: 33.333%;" class="li1">
-    <a id="books">Book Session</a> 
-  </li>
-  <li style="width: 33.333%;"class="li1">
-    <a id="add">Add Review</a> 
-  </li>
-</ul>
-</div>
-</div>
-   
-</div>
-<br>
+
+ 
+
+<div id="cdiv">
 <div class="center-div" id="rev">      
 </div>
 <div class="center-div" id="booking">
@@ -421,16 +430,21 @@ function locationInit() {
 <div class="center-div" id="wrev">
 
 
-</div><div>
+</div>
+</div>
+<div>
 <br>
 <br>
 </div></div>
 `;
+
+
  let menuButton = document.getElementById("menu-button");
 
   let mnav = document.getElementById("mnav");
 let menubool = true;
 menuButton.addEventListener("click", async function() {
+
   if(menubool){
     mnav.classList.remove("hide");
     mnav.classList.add("open");
@@ -535,7 +549,7 @@ menuButton.addEventListener("click", async function() {
   }
   document.getElementById(
     "lname"
-  ).innerHTML = `<b><i>${locationInfo.name}</i></b>`;
+  ).innerHTML = `${locationInfo.name}`;
   showSlides();
 
   function loadReview() {
@@ -567,7 +581,7 @@ menuButton.addEventListener("click", async function() {
     }
 
     let rev = document.getElementById("rev");
-    imgStarString = `<div style="padding-bottom:10px;"><b><i>Rating</i></b> ${imgStarString}</div>`;
+    imgStarString = `<div style="padding-bottom:10px;"><span style='color:black;font-weight: 500;font-size: larger; '>Rating</span> ${imgStarString}</div>`;
     let reviewSection = "";
     for (let i = locationInfo.review.length - 1; i >= 0; i--) {
       let imgStarStringuser = "";
@@ -579,22 +593,58 @@ menuButton.addEventListener("click", async function() {
       }
       reviewSection += `<div class="message"><i>${locationInfo.review[i].name}~</i>${imgStarStringuser}<br><p>${locationInfo.review[i].content}</p></div>`;
     }
-    rev.innerHTML = imgStarString + reviewSection;
+    rev.innerHTML = imgStarString + reviewSection + `<div id="seereviews" class="bookingbtns"><button class="booksess cdivbtn" id="seesbook">Book Sessions</button>
+    <button class="revadd cdivbtn" id="seesadd">Add Review</button></div>` ;
+    document.getElementById("seesbook").addEventListener("click", function () {
+      document.getElementById("booking").hidden = false;
+      document.getElementById("wrev").innerHTML = null;
+      document.getElementById("wrev").hidden = true;
+      document.getElementById("rev").innerHTML = null;
+      document.getElementById("rev").hidden = true;
+      booking();
+    });
+    document.getElementById("seesadd").addEventListener("click", function () {
+      document.getElementById("wrev").hidden = false;
+      document.getElementById("booking").innerHTML = null;
+      document.getElementById("booking").hidden = true;
+      document.getElementById("rev").innerHTML = null;
+      document.getElementById("rev").hidden = true;
+      writeReview();
+     
+    });
   }
   let numRating = 5;
   function writeReview() {
     // const ratingContainer = document.createElement("div");
     // ratingContainer.classList.add("rating");
     let starsString =
-      "<div class = 'rating'><b><i style='color: white;'>How was your experience</i><b><br>";
+      "<div class = 'rating'><div style='height:15px'></div><span style='color:black;font-weight: 500;font-size: larger; '>How was your experience</span><br>";
     for (let i = 0; i < 5; i++) {
       starsString += "<span class = 'star'>&#9733;</span>";
     }
     starsString += `</div><div class="review-box"><textarea id="userInput" placeholder="Write your review here"></textarea><br><div class="popup"><button id="btn1">Submit</button>
     <span class="popuptext" id="myPopup" ></span>
-</div></div>`;
+</div></div><div class="bookingbtns"><button class="revsee cdivbtn" id="wrsee">Reviews</button>
+<button class="booksess cdivbtn" id="wrbookses">Book Sessions</button></div>`;
 
     document.getElementById("wrev").innerHTML = starsString;
+    document.getElementById("wrbookses").addEventListener("click", function () {
+      document.getElementById("booking").hidden = false;
+      document.getElementById("wrev").innerHTML = null;
+      document.getElementById("wrev").hidden = true;
+      document.getElementById("rev").innerHTML = null;
+      document.getElementById("rev").hidden = true;
+      booking();
+    });
+    document.getElementById("wrsee").addEventListener("click", function () {
+      document.getElementById("rev").hidden = false;
+      document.getElementById("booking").innerHTML = null;
+      document.getElementById("booking").hidden = true;
+      document.getElementById("wrev").innerHTML = null;
+      document.getElementById("wrev").hidden = true;
+      loadReview();
+     
+    });
     const rating = document.querySelector(".rating");
     const stars = Array.from(rating.querySelectorAll(".star"));
 
@@ -617,12 +667,14 @@ menuButton.addEventListener("click", async function() {
         if (input == "") {
           for (let i = 0; i < allLocationInfo.length; i++) {
             if (allLocationInfo[i].idInfo == target) {
+              
               allLocationInfo[i].rating.push(numRating);
               locationInfo = allLocationInfo[i];
               localStorage.setItem(
                 "locationData",
                 JSON.stringify(allLocationInfo)
               );
+             
               break;
             }
           }
@@ -727,7 +779,8 @@ menuButton.addEventListener("click", async function() {
   function booking() {
     document.getElementById(
       "booking"
-    ).innerHTML = `<div><i><b>Pick a Date</i></b></div><input type="date" id="datepicker" min="${today}"><br><br><div id="ssession"><div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></select></div></div>`;
+    ).innerHTML = `<div><div id="bookingtopSpace"></div><div>Pick a Date</div><br><input type="date" id="datepicker" min="${today}"><br><br><div id="ssession"><br><div>Pick a Session</div><br><div id="session"><select id="appointmentTime" name="appointmentTime" required></select></div></div><div class="bookingbtns"><button class="revsee cdivbtn" id="seerevbook">Reviews</button>
+    <button class="cdivbtn" onclick="loadtpage()">Bookings</button><button class="revadd cdivbtn" id="arb">Add Review</button></div>`;
   
 
       document.getElementById("datepicker").value = userDate;
@@ -740,10 +793,10 @@ menuButton.addEventListener("click", async function() {
       if (userDate == today && hour >= 18) {
    
         let session = document.getElementById("ssession");
-        session.innerHTML = "<b>No available session for this date</b>";
+        session.innerHTML = "No available session for this date";
      
       } else {
-        document.getElementById("ssession").innerHTML = `<div><i><b>Pick a Session</i></b></div><div id="session"><select id="appointmentTime" name="appointmentTime" required></select></div>`
+        document.getElementById("ssession").innerHTML = `<br><div>Pick a Session</div><br><div id="session"><select id="appointmentTime" name="appointmentTime" required></select></div>`
         let appointmentTime = document.getElementById("appointmentTime");
        
         appointmentTime.innerHTML = null; 
@@ -770,7 +823,7 @@ menuButton.addEventListener("click", async function() {
       let hour = new Date().getHours();
       if (userDate == today && hour >= 18) {
         let session = document.getElementById("ssession");
-        session.innerHTML = "<b>No available session for this date</b>";
+        session.innerHTML = "No available session for this date";
  
       } else {
         if (userDate == today) {
@@ -804,8 +857,7 @@ menuButton.addEventListener("click", async function() {
           };
           if (localStorage.getItem("booking") == null) {
             localStorage.setItem("booking", JSON.stringify([myObj]));
-            let output = document.getElementById("btn2Result");
-            output.innerHTML = "";
+            
            
           let popup = document.getElementById("myPopup2");
        
@@ -848,6 +900,24 @@ menuButton.addEventListener("click", async function() {
       }
     }
     locationAvailabilityInit();
+    document.getElementById("arb").addEventListener("click", function () {
+      document.getElementById("wrev").hidden = false;
+      document.getElementById("booking").innerHTML = null;
+      document.getElementById("booking").hidden = true;
+      document.getElementById("rev").innerHTML = null;
+      document.getElementById("rev").hidden = true;
+      writeReview();
+     
+    });
+    document.getElementById("seerevbook").addEventListener("click", function () {
+      document.getElementById("rev").hidden = false;
+      document.getElementById("booking").innerHTML = null;
+      document.getElementById("booking").hidden = true;
+      document.getElementById("wrev").innerHTML = null;
+      document.getElementById("wrev").hidden = true;
+      loadReview();
+     
+    });
   }
 
   document.getElementById("review").addEventListener("click", function () {
@@ -857,10 +927,12 @@ menuButton.addEventListener("click", async function() {
     document.getElementById("wrev").innerHTML = null;
     document.getElementById("wrev").hidden = true;
     loadReview();
-    document.getElementById('rev').scrollIntoView({
-      behavior: 'smooth'
-    });
+   
   });
+
+
+  
+
   document.getElementById("add").addEventListener("click", function () {
     document.getElementById("wrev").hidden = false;
     document.getElementById("booking").innerHTML = null;
@@ -868,9 +940,7 @@ menuButton.addEventListener("click", async function() {
     document.getElementById("rev").innerHTML = null;
     document.getElementById("rev").hidden = true;
     writeReview();
-    document.getElementById('wrev').scrollIntoView({
-      behavior: 'smooth'
-    });
+   
   });
   document.getElementById("books").addEventListener("click", function () {
     document.getElementById("booking").hidden = false;
@@ -879,9 +949,7 @@ menuButton.addEventListener("click", async function() {
     document.getElementById("rev").innerHTML = null;
     document.getElementById("rev").hidden = true;
     booking();
-    document.getElementById('booking').scrollIntoView({
-      behavior: 'smooth'
-    });
+   
   });
   document.getElementById("booking").hidden = false;
   document.getElementById("rev").hidden = true;
@@ -914,7 +982,7 @@ function bookinginit() {
     let outputString = "";
     let num = 0;
     for (let i = bookingArray.length - 1; i >= 0; i--) {
-      outputString += `<div><div class="content2"><div class="left"><h4><i>Location: ${bookingArray[num].location}</i></h4><h4><i>Date: ${bookingArray[i].date}</i></h4><h4><i>Time: ${bookingArray[i].time}</i></h4></div><div class="right"><img src="${bookingArray[i].img}"><br><br><button id=${i} class='cancel'>Cancel</button></div></div></div>`;
+      outputString += `<div><div class="content2"><div class="left"><h4>Location: ${bookingArray[num].location}</h4><h4>Date: ${bookingArray[i].date}</h4><h4>Time: ${bookingArray[i].time}</h4></div><div class="right"><img src="${bookingArray[i].img}"><br><br><button id=${i} class='cancel'>Cancel</button></div></div></div>`;
       num++;
     }
     document.getElementById("outputbooking").innerHTML = outputString;

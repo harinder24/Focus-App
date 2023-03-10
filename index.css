@@ -1,5 +1,5 @@
 *{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto';
 }
 #btn2Result{
   font-weight: bolder;
@@ -34,7 +34,7 @@
 }
 #footdiv {
   display: flex;
-  height: 45px;
+  height: 49px;
   justify-content: center;
   margin: 0;
   padding: 0;
@@ -119,7 +119,7 @@
 }
 @media only screen and (max-width: 768px) {
   .select1 {
-    width: 11.5em;
+    width: 13.5em;
   }
 }
 #ffstar {
@@ -145,26 +145,82 @@
 #spage {
   
   box-sizing: border-box;
-  background: linear-gradient(#ffffff, #535353);
+  background: 	#E8E8E8;
   background-attachment: fixed;
   text-align: center;
   font-family: "Didact Gothic";
- min-height: calc(100vh - 4px);
- border: 4px solid black;
- border-top: 0px;
+ min-height: calc(100vh);
+
 }
 #pic{
-  display: inline-block;
+  padding-left: 2.75vw;
+  display: block;
+  float: left;
 
-  height: calc(55vw / 1.6);
+
   margin: 0;
   
 }
-#pic img {
-  width: 55vw;
-  height: calc(55vw / 1.6);
+
+#cdiv{
+  padding-right: 2.75vw;
+  float: right;
+}
+#bookingtopSpace{
+  height: 10vh;
+}
+.center-div {
+ background-color: #d7d7d7;
+  width: 40vw;
+  float: right;
+  height: calc(70vh);
+  box-shadow: 0 0 10px #d7d7d7;
+  border:1px solid  #d7d7d7;
+  border-radius: 16px;
+  margin: auto;
+  text-align: center;
+  max-height: 70vh;
+  overflow: auto;
+
+}
+.center-div::-webkit-scrollbar {
+  display: none;
 }
 
+#pic img {
+  width: 50vw;
+  height: calc( 70vh);
+
+  border-radius: 16px;
+}
+@media only screen and (max-width: 1000px){
+  #cdiv{
+    float: none;
+    clear: both;
+    padding: 0px;
+    padding-top: 20px;
+  }
+  #pic{
+    padding-left: 0px;
+    float: none;
+  }
+  #pic img{
+    width: 80vw;
+  }
+  #bookingtopSpace{
+    height: 15px;
+  }
+  .center-div{
+    
+    clear: both;
+    width: 600px;
+    float: none;
+    max-height: 450px;
+  }
+  #wrev{
+    max-height: 500px;
+  }
+} 
 
 .slideshow-container {
   max-width: inherit;
@@ -421,50 +477,38 @@ left:0;
 }
 
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 760px){
   #menu{
     display: flex;
-    justify-content: center;
+    justify-content: end;
   }
+ 
 } 
-@media only screen and (max-width: 700px){
-
+@media only screen and (max-width: 760px){
+  
   #mnav{
     display: none;
     transform-origin: top center;
     animation: showmenu 0.5s ease-in-out forwards;
     
    } 
+
   #mnav li{
    clear: both;
+   float: none;
   }
+
   #mnav li a{
     cursor: pointer;
    width: 100vw;
    padding: 14px 0px;
    border-top: 1px solid #bcbcbc;
   }
+  
  
  } 
 
-.center-div {
 
-
-  width: 600px;
-  height: auto;
-  background-color: rgb(102, 101, 101);
-  border: 4px solid #111;
-  border-radius: 16px;
-  margin: auto;
-  text-align: center;
-  min-height: 31.5vh;
-  padding-bottom: 10px;
-}
-.center-div b {
- 
-  font-size: xx-large;
-  color: #f2f2f2;
-}
 
 #leftContent{
   box-sizing: border-box;
@@ -483,7 +527,19 @@ left:0;
   width: 100%;
 }
 
+
+#lname{
+  clear: both;
+}
 .li1 a {
+  display: block;
+  color: #bcbcbc;
+  text-align: center;
+  padding: 11.5px ;
+  text-decoration: none;
+}
+
+#lispan{
   display: block;
   color: #bcbcbc;
   text-align: center;
@@ -493,12 +549,25 @@ left:0;
 #vl {
   margin-top: 15px;
 }
-.li1 a:hover,.li1 a:focus {
+#lispan:hover, #lispan:focus{
   transform: scale(1.2);
   transition: all 0.3s;
 }
 
+.li1 a:hover,.li1 a:focus{
+  transform: scale(1.2);
+  transition: all 0.3s;
+}
 
+#booking{
+
+  font-weight: 500;
+  font-size: larger;
+}
+#lname{
+  font-weight: 500;
+  font-size: larger;
+}
 .message-box {
   width: 100%;
   height: 80%;
@@ -507,6 +576,15 @@ left:0;
 
 }
 
+
+
+#seereviews{
+  position: sticky;
+  bottom: 0; 
+  padding-bottom: 15px;
+  padding-top: 15px;
+  background-color: #d7d7d7;
+}
 .message {
   margin-left: 7%;
   text-align: left;
@@ -521,15 +599,15 @@ left:0;
 .star {
   cursor: pointer;
   display: inline-block;
-  color: #f2b01e;
+  color: #bbb;
   transition: all 0.3s ease;
   width: 40px;
   font-size: xx-large;
 }
 
-.star:hover ~ .star {
+/* .star:hover ~ .star {
   color: #bbb;
-}
+} */
 #fstar {
   color: #f2b01e;
   width: 40px;
@@ -561,6 +639,37 @@ left:0;
   font-size: 16px;
   resize: none;
 }
+/* #rev{
+  position: relative;
+} */
+.bookingbtns{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+  position: static;
+  bottom: 0px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cdivbtn:hover, .cdivbtn:focus {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+.cdivbtn{
+  background-color: #d7d7d7;
+  font-weight: 500;
+  color: rgb(21, 21, 21);
+  
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.cdivbtn:hover, .cdivbtn:focus {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
 #btn1 {
   background-color: #f2b01e;
   color: #fff;
@@ -572,8 +681,9 @@ left:0;
   
 }
 
-#btn1:hover {
-  background-color: #e29913;
+#btn1:hover, #btn1:focus {
+  transform: scale(1.05);
+  transition: all 0.3s;
 }
 #datepicker {
   padding: 0.5em;
@@ -598,9 +708,11 @@ left:0;
   background-color: #ccc;
 }
 #btn2 {
-  background: linear-gradient(#ffffff, #535353);
-  color: rgb(36, 34, 34);
-  border: none;
+  background-color: #bababa;
+  font-weight: 500;
+  color: rgb(21, 21, 21);
+  
+  border: 1px solid rgb(21, 21, 21);
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
@@ -637,20 +749,19 @@ left:0;
 
 /*  */
 #tpage {
-  background: linear-gradient(#ffffff, #535353);
+  background-color: 	#E8E8E8; ;
   text-align: center;
   background-attachment: fixed;
   text-align: center;
   font-family: "Didact Gothic";
-  border: 4px solid black;
-  border-top: 0px;
+
 }
 #outputbooking img {
   height: 100px;
   width: 150px;
 }
 .content2 {
-  background: linear-gradient(#ffffff, #535353);
+  background: #d7d7d7;
   box-sizing: border-box;
 
   margin-left: 25%;
@@ -659,7 +770,6 @@ left:0;
   display: flex;
   margin-bottom: 10px;
   width: 50%;
-  background-color: white;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 2px 2px 5px grey;
@@ -704,16 +814,18 @@ left:0;
   transition: all 0.3s;
 }
 .cancel {
-  background: linear-gradient(#ffffff, #535353);
-  color: rgb(36, 34, 34);
-  border: none;
+  background-color: #bababa;
+  font-weight: 500;
+  color: rgb(21, 21, 21);
+  
+  border: 1px solid rgb(21, 21, 21);
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
 }
 
-.cancel:hover {
+.cancel:hover, .cancel:focus {
   transform: scale(1.05);
   transition: all 0.3s;
 }
@@ -731,5 +843,5 @@ left:0;
   }
 }
 #bookingheight {
-  min-height: calc(100vh - 4px);
+  min-height: calc(100vh);
 }
